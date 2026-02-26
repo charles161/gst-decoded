@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ocean: #0a1628;
+  --color-ocean-light: #142238;
+  --color-ocean-dark: #060d18;
+  --color-surface: #0f1d32;
+  --color-surface-light: #1a2d4a;
+  --color-credit: #00d4ff;
+  --color-tax: #ff9d00;
+  --color-penalty: #ff3366;
+  --color-success: #00e88f;
+  --color-muted: #4a4a6a;
+  --color-text-primary: #f0f0f5;
+  --color-text-secondary: #a0a0b0;
+  --color-text-muted: #6a6a7a;
+  --font-display: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: var(--color-ocean);
+  color: var(--color-text-primary);
+  font-family: var(--font-display);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(0, 212, 255, 0.3);
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-ocean-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-muted);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-credit);
+}
+
+.glow-text {
+  color: var(--color-credit);
+  text-shadow:
+    0 0 10px rgba(0, 212, 255, 0.5),
+    0 0 20px rgba(0, 212, 255, 0.3),
+    0 0 40px rgba(0, 212, 255, 0.2);
+}
+
+.glow-text-tax {
+  color: var(--color-tax);
+  text-shadow:
+    0 0 10px rgba(255, 157, 0, 0.5),
+    0 0 20px rgba(255, 157, 0, 0.3);
+}
+
+.glow-text-penalty {
+  color: var(--color-penalty);
+  text-shadow:
+    0 0 10px rgba(255, 51, 102, 0.5),
+    0 0 20px rgba(255, 51, 102, 0.3);
+}
+
+@keyframes breathe {
+  0%, 100% { transform: scale(0.97); opacity: 0.85; }
+  50% { transform: scale(1.03); opacity: 1; }
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.8); opacity: 0.8; }
+  100% { transform: scale(2); opacity: 0; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
